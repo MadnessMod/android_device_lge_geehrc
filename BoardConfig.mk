@@ -37,7 +37,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=geehrc lp
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 
 # Try to build the kernel
-TARGET_KERNEL_SOURCE := kernel/lge/gee
+TARGET_KERNEL_SOURCE := device/lge/geehrc-kernel
 TARGET_KERNEL_CONFIG := gee_defconfig
 
 BOARD_USES_ALSA_AUDIO:= true
