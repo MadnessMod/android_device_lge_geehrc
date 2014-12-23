@@ -102,7 +102,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_USES_SECURE_SERVICES := true
 
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
-BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
+#BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geehrc
 
@@ -171,7 +171,6 @@ TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
-TARGET_RECOVERY_INITRC := device/lge/geehrc/recovery/init.rc
 TW_BRIGHTNESS_PATH := /sys/class/backlight/lm3530/brightness
 TW_MAX_BRIGHTNESS := 255
 
@@ -186,3 +185,5 @@ MR_KEXEC_MEM_MIN := 0x84000000
 
 #Asserts
 TARGET_OTA_ASSERT_DEVICE := gee,geeb,geehrc,e975,geehrc_4g_spr,geespr,ls970,geehrc4g,geehrc4g_spr_us,geebus,e970,e973,e971,geeb_att_us
+
+BOARD_HARDWARE_CLASS += device/lge/geehrc/cmhw
