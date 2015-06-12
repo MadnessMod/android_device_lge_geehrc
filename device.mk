@@ -41,6 +41,7 @@ PRODUCT_PACKAGES += \
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
+	FMRadio \
         LiveWallpapers \
         LiveWallpapersPicker \
         VisualizationWallpapers \
