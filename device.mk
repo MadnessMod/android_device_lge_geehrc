@@ -77,11 +77,6 @@ PRODUCT_COPY_FILES += \
 	device/lge/geehrc/media_codecs.xml:system/etc/media_codecs.xml
 
 
-# Better colors gamma correction
-PRODUCT_COPY_FILES += \
-        device/lge/geehrc/initd/91rgbgamma:system/etc/init.d/91rgbgamma
-
-
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
 	device/lge/geehrc/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
