@@ -165,11 +165,6 @@ PRODUCT_PROPERTY_OVERRIDES += persist.hwc.mdpcomp.enable=true
 PRODUCT_PROPERTY_OVERRIDES += \
 	camera2.portability.force_api=1
 
-# Use awesome player
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.media.use-awesome=true \
-	media.stagefright.use-awesome=true
-
 PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -260,11 +255,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	rild.libpath=/system/lib/libril-qc-qmi-1.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	 telephony.lteOnCdmaDevice=1 \
+	telephony.lteOnCdmaDevice=1 \
         telephony.lteOnGsmDevice=1 \
         ro.telephony.default_network=10 \
         ro.ril.def.preferred.network=10 \
-	 ril.subscription.types=NV,RUIM
+	ril.subscription.types=NV,RUIM
          
 ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \

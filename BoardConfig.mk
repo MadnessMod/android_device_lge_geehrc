@@ -103,7 +103,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_USES_SECURE_SERVICES := true
 
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
-#BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
+BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geehrc
 
@@ -125,10 +125,13 @@ BOARD_SEPOLICY_UNION += \
        domain.te \
        file.te \
        file_contexts \
+       hci_attach.te \
        hostapd.te \
+       init.te \
        kickstart.te \
        mediaserver.te \
        mpdecision.te \
+       netd.te \
        netmgrd.te \
        property.te \
        property_contexts \
@@ -136,13 +139,16 @@ BOARD_SEPOLICY_UNION += \
        rild.te \
        rmt.te \
        sensors.te \
+       servicemanager.te \
+       shell.te \
        surfaceflinger.te \
        system_server.te \
        tee.te \
        te_macros \
        thermald.te \
-       ueventd.te
-
+       ueventd.te \
+       vold.te \
+       zygote.te
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
