@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+TARGET_SPECIFIC_HEADER_PATH := device/lge/geehrc/include
+
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
@@ -113,6 +115,8 @@ TARGET_PROVIDES_GPS_LOC_API := true
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/geehrc
 
+BOARD_RIL_CLASS := ../../../device/lge/geehrc/ril/
+
 BOARD_SEPOLICY_DIRS += \
        device/lge/geehrc/sepolicy
 
@@ -168,16 +172,10 @@ DEVICE_RESOLUTION := 720x1280
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_HAS_NO_REAL_SDCARD := true
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-TW_FLASH_FROM_STORAGE := true
 TW_NO_USB_STORAGE := true
-
-TW_INTERNAL_STORAGE_PATH := "/data/media"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
 TW_BRIGHTNESS_PATH := /sys/class/backlight/lm3530/brightness
 TW_MAX_BRIGHTNESS := 255
+TW_EXCLUDE_ENCRYPTED_BACKUPS := true
 
 #Asserts
 TARGET_OTA_ASSERT_DEVICE := gee,geeb,geehrc,e975,geehrc_4g_spr,geespr,ls970,geehrc4g,geehrc4g_spr_us,geebus,e970,e973,e971,geeb_att_us

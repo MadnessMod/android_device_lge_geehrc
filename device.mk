@@ -30,6 +30,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
     lights.geehrc \
+    camera.geehrc \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
@@ -51,8 +52,7 @@ PRODUCT_COPY_FILES += \
 	device/lge/geehrc/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
 	device/lge/geehrc/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
 	device/lge/geehrc/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
-	device/lge/geehrc/init.geehrc.wifi.sh:system/etc/init.geehrc.wifi.sh \
-	device/lge/geehrc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+	device/lge/geehrc/init.geehrc.wifi.sh:system/etc/init.geehrc.wifi.sh
 
 PRODUCT_COPY_FILES += \
         device/lge/geehrc/fetch-swv:system/bin/fetch-swv
@@ -65,7 +65,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	device/lge/geehrc/init.geehrc.rc:root/init.geehrc.rc \
-	device/lge/geehrc/init.gee.fm.sh:root/init.gee.fm.sh \
 	device/lge/geehrc/init.geehrc.usb.rc:root/init.geehrc.usb.rc \
 	device/lge/geehrc/fstab.geehrc:root/fstab.geehrc \
 	device/lge/geehrc/ueventd.geehrc.rc:root/ueventd.geehrc.rc \
@@ -257,6 +256,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	telephony.lteOnCdmaDevice=1 \
         telephony.lteOnGsmDevice=1 \
+        ro.telephony.ril_class=geesprRIL \
         ro.telephony.default_network=10 \
         ro.ril.def.preferred.network=10 \
 	ril.subscription.types=NV,RUIM
@@ -293,9 +293,6 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxEvrcEnc \
     libOmxQcelp13Enc
-
-# QRNGD
-PRODUCT_PACKAGES += qrngd
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 

@@ -55,7 +55,6 @@ on charger-fs
 
 on fs
     mount_all ./fstab.geehrc
-    restorecon_recursive /persist
     setprop ro.crypto.fuse_sdcard true
 
 on early-boot
@@ -181,7 +180,6 @@ on post-fs-data
     mkdir /data/system/sensors
     chmod 665 /data/system/sensors
     write /data/system/sensors/settings 1
-    restorecon /data/system/sensors/settings
     chmod 660 /data/system/sensors/settings
 
     # AKM setting data
@@ -475,20 +473,8 @@ service diag_mdlog /system/bin/diag_mdlog -s 100
     class late_start
     disabled
 
-service qrngd /system/bin/qrngd -f
-    class main
-    user root
-    group root
-
 service fetch-swv /system/bin/fetch-swv
     class late_start
-    oneshot
-
-service fm_dl /system/bin/sh /system/etc/init.gee.fm.sh
-    class late_start
-    user root
-    group system qcom_oncrpc
-    disabled
     oneshot
 
 # on property:gsm.sim.state=READY
